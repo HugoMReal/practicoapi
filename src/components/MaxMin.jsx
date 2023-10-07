@@ -1,4 +1,4 @@
-function MaxMin() {
+function MaxMin({max, min}) {
     return (
         <div className="maxmin">
             <table>
@@ -7,8 +7,8 @@ function MaxMin() {
                     <td>Mínima</td>
                 </tr>
                 <tr>
-                    <td>30°C</td>
-                    <td>18°C</td>
+                    <td>{max}°C</td>
+                    <td>{min}°C</td>
                 </tr>
             </table>
         </div>

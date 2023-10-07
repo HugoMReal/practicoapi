@@ -1,8 +1,8 @@
-function Viento() {
+function Viento({vientoMax, unidadViento}) {
     return (
         <div className="viento">
             <h4>Viento</h4>
-            <p>11,12 km/h</p>
+            <p>{vientoMax} {unidadViento}</p>
         </div>
     )
 }
