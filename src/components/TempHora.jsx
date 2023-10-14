@@ -1,21 +1,26 @@
 import React from 'react';
 import { Bar, BarChart, ResponsiveContainer, ReferenceLine, Tooltip, XAxis, YAxis } from 'recharts';
 
-const TempHora = ({ horas, tempHoras }) => {
+const TempHora = ({ horas, tempHoras, horaAct }) => {
 
     const horarios = horas;
     const temperatura = tempHoras;
-    console.log(temperatura);
 
+    //usar esto en demas componentes para obtener valores de ahora y maximos o minimos
+
+    let actual = horaAct;
+    let actualCortada = actual.split(":");
+    let horaRedondeada = actualCortada[0] + ":00";
+    let posicion = horarios.indexOf(horaRedondeada);
 
     const data = [
-        { hora: (horarios[0].split("T")[1]), temperatura: (temperatura[0]) },
-        { hora: (horarios[1].split("T")[1]), temperatura: (temperatura[1]) },
-        { hora: (horarios[2].split("T")[1]), temperatura: (temperatura[2]) },
-        { hora: (horarios[3].split("T")[1]), temperatura: (temperatura[3]) },
-        { hora: (horarios[4].split("T")[1]), temperatura: (temperatura[4]) },
-        { hora: (horarios[5].split("T")[1]), temperatura: (temperatura[5]) },
-        { hora: (horarios[6].split("T")[1]), temperatura: (temperatura[6]) },
+        { hora: (horarios[posicion].split("T")[1]), temperatura: (temperatura[posicion]) },
+        { hora: (horarios[posicion + 1].split("T")[1]), temperatura: (temperatura[posicion + 1]) },
+        { hora: (horarios[posicion + 2].split("T")[1]), temperatura: (temperatura[posicion + 2]) },
+        { hora: (horarios[posicion + 3].split("T")[1]), temperatura: (temperatura[posicion + 3]) },
+        { hora: (horarios[posicion + 4].split("T")[1]), temperatura: (temperatura[posicion + 4]) },
+        { hora: (horarios[posicion + 5].split("T")[1]), temperatura: (temperatura[posicion + 5]) },
+        { hora: (horarios[posicion + 6].split("T")[1]), temperatura: (temperatura[posicion + 6]) },
     ]
     return (
         <div className="tempDia" >

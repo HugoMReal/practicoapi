@@ -9,38 +9,70 @@ import MaxMin from './components/MaxMin';
 import Visibilidad from './components/Visibilidad';
 import CalidadAire from './components/CalidadAire';
 import data from './api/api.json';
+import { useState } from 'react';
+import { useEffect } from "react";
 
 function App() {
-  const tAhora = data["current_weather"]["temperature"];
-  const unidadTemp = data["hourly_units"]["temperature_2m"];
-  const horas = data["hourly"]["time"];
-  const tempHoras = data ["hourly"]["temperature_2m"];
-  const uv = data["daily"] ["uv_index_max"];
-  const vientoMax = data["daily"] ["windspeed_10m_max"];
-  const unidadViento = data["daily_units"]["windspeed_10m_max"];
-  const amanecer = data["daily"]["sunrise"];
-  const puesta = data["daily"]["sunset"];
-  const max = data["daily"]["temperature_2m_max"];
-  const min = data["daily"]["temperature_2m_min"];
-  const visibilidad = data["hourly"]["visibility"];
-  const humedad = data["hourly"]["relativehumidity_2m"];
+  const [weatherData, setWeatherData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+
+    fetch(
+      'https://api.open-meteo.com/v1/forecast?latitude=-36.8927&longitude=-60.3225&current=temperature_2m,relativehumidity_2m,weathercode,windspeed_10m,winddirection_10m&hourly=temperature_2m,relativehumidity_2m,visibility&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&timezone=America%2FSao_Paulo&forecast_days=1')
+      .then(resp => resp.json()).then((data) => {
+        setWeatherData(data);
+        setLoading(false);
+      }).catch((ex) => {
+        console.error(ex);
+      });
+  }, [])
+
+  console.log(weatherData);
+
   const calidad = data["hourly"]["european_aqi"];
 
   return (
     <div className="App">
+
       <div className="weather-container">
-        <div className='titulo'>Hoy</div>
-        <div className='resumen'>Resumen</div>
-        <TempActual tAhora={tAhora} unidadTemp={unidadTemp} />
-        <TempHora horas={horas} tempHoras = {tempHoras}/>
-        <Humedad humedad={humedad} />
-        <IndiceUV uv= {uv}/>
-        <Viento vientoMax ={vientoMax} unidadViento = {unidadViento} />
-        <AmanecerPuesta amanecer = {amanecer} puesta = {puesta}/>
-        <MaxMin max={max} min={min}/>
-        <Visibilidad visibilidad ={visibilidad}/>
-        <CalidadAire calidad={calidad}/>
+
+        {!loading && weatherData &&
+          <div className='titulo'>Hoy</div>}
+
+        {!loading && weatherData &&
+          <div className='resumen'>Resumen</div>}
+
+        <div>{loading && <h1>Cargando...</h1>}</div>
+
+        {!loading && weatherData &&
+          <TempActual tAhora={weatherData["current"]["temperature_2m"]}
+            unidadTemp={!loading && weatherData && weatherData["current_units"]["temperature_2m"]} />}
+
+        {!loading && weatherData &&
+          <TempHora horas={weatherData["hourly"]["time"]} tempHoras={weatherData["hourly"]["temperature_2m"]}
+            horaAct={weatherData["current"]["time"]} />}
+
+        {!loading && weatherData &&
+          <Humedad humedad={weatherData["hourly"]["relativehumidity_2m"]} />}
+
+        {!loading && weatherData && <IndiceUV uv={weatherData["daily"]["uv_index_max"]} />}
+
+        {!loading && weatherData && <Viento vientoMax={weatherData["current"]["windspeed_10m"]}
+          unidadViento={weatherData["current_units"]["windspeed_10m"]} />};
+
+        {!loading && weatherData &&
+          <AmanecerPuesta amanecer={weatherData["daily"]["sunrise"]} puesta={weatherData["daily"]["sunset"]} />}
+
+        {!loading && weatherData &&
+          <MaxMin max={weatherData["daily"]["temperature_2m_max"]} min={weatherData["daily"]["temperature_2m_min"]} />}
+
+        {!loading && weatherData && <Visibilidad visibilidad={weatherData["hourly"]["visibility"]} />}
+
+        {!loading && <CalidadAire calidad={calidad} />}
+
       </div>
+
     </div>
   );
 }

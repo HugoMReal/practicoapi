@@ -1,16 +1,15 @@
 function MaxMin({max, min}) {
     return (
         <div className="maxmin">
-            <table>
-                <tr>
-                    <td>Máxima</td>
-                    <td>Mínima</td>
-                </tr>
-                <tr>
-                    <td>{max}°C</td>
-                    <td>{min}°C</td>
-                </tr>
-            </table>
+
+            <h4>Máxima</h4>
+
+            <p>{max}°C</p>
+
+            <h4>Mínima</h4> 
+                    
+            <p>{min}°C</p>    
+            
         </div>
     )
 }

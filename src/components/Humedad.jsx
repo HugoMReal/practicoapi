@@ -5,7 +5,7 @@ const Humedad = ({humedad}) => {
     
     let max = Math.max(...humedad);     
     let resto = 100 - max;
-    
+    console.log(max)
     const data = [
         { name: 'Group A', value: (max) },
         { name: 'Group B', value: (resto) },
@@ -36,7 +36,7 @@ const Humedad = ({humedad}) => {
                 </Pie>
     
             </PieChart>
-           
+            <h4>{max}%</h4> 
             </div>
     
         );

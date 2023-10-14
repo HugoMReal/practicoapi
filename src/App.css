@@ -5,21 +5,21 @@
   gap: 20px;
   background-color: #2196F3;
   padding: 10px;
-  
-
 }
 
-.weather-container > div {
+.weather-container>div {
   padding: 20px 0;
   font-size: 30px;
   border-radius: 20px;
+  min-height: 50vh;
 }
 
-.titulo, .resumen {
+.titulo,
+.resumen {
   background-color: #2196F3;
   grid-column-start: 2;
   grid-column-end: 4;
-  
+
 }
 
 .temp {
@@ -31,7 +31,7 @@
 }
 
 .tempDia {
-  background-color: rgba(243, 118, 15, 0.973);
+  background-color: rgba(243, 118, 15, 0.8);
   text-align: center;
   grid-column-start: 2;
   grid-column-end: 5;
@@ -40,11 +40,12 @@
   border: solid;
 }
 
-.humedad, .amanecer {
+.humedad,
+.amanecer {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   grid-column-start: 2;
-  grid-column-end: 3; 
+  grid-column-end: 3;
   border: solid;
   display: flex;
   justify-content: center;
@@ -52,31 +53,32 @@
   align-items: center;
 }
 
-.indice, .visibilidad {
+.indice,
+.visibilidad {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   grid-column-start: 3;
-  grid-column-end: 4; 
-  border: solid;  
+  grid-column-end: 4;
+  border: solid;
 }
 
-.viento, .calidad {
+.viento,
+.calidad {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   grid-column-start: 4;
-  grid-column-end: 5; 
-  border: solid;  
+  grid-column-end: 5;
+  border: solid;
 }
 
 .maxmin {
-  background-color: rgba(243, 118, 15, 0.973);
+  background-color: rgba(243, 118, 15, 0.8);
   text-align: center;
   grid-row-start: 4;
   grid-row-end: 6;
   border: solid;
 }
 
-table{
+table {
   margin: 0 auto;
 }
-
