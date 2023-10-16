@@ -8,7 +8,7 @@ function Visibilidad({ visibilidad, horaAct }) {
 
     return (
         <div className="visibilidad">
-            <h4>Visibilidad</h4>
+            <h4>Visibilidad max</h4>
             <p>{min} km</p>
         </div>
     )

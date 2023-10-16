@@ -8,7 +8,6 @@ import AmanecerPuesta from './components/AmanecerPuesta';
 import MaxMin from './components/MaxMin';
 import Visibilidad from './components/Visibilidad';
 import CalidadAire from './components/CalidadAire';
-import data from './api/api.json';
 import { useState } from 'react';
 import { useEffect } from "react";
 
@@ -30,9 +29,7 @@ function App() {
 
   console.log(weatherData);
 
-  const calidad = data["hourly"]["european_aqi"];
-
-  return (
+   return (
     <div className="App">
 
       <div className="weather-container">
@@ -69,7 +66,7 @@ function App() {
 
         {!loading && weatherData && <Visibilidad visibilidad={weatherData["hourly"]["visibility"]} horaAct={weatherData["current"]["time"]}/>}
 
-        {!loading && <CalidadAire calidad={calidad} />}
+        {!loading && <CalidadAire />}
 
       </div>
 

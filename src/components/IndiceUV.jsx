@@ -1,7 +1,7 @@
 function IndiceUV({uv}) {
     return (
         <div className="indice">
-            <h4>Indice UV</h4>
+            <h4>Indice UV máx</h4>
             <p>{uv}</p></div>)
 }
 

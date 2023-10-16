@@ -1,4 +1,4 @@
-function MaxMin({max, min}) {
+function MaxMin({ max, min }) {
     return (
         <div className="maxmin">
 
@@ -6,10 +6,10 @@ function MaxMin({max, min}) {
 
             <p>{max}°C</p>
 
-            <h4>Mínima</h4> 
-                    
-            <p>{min}°C</p>    
-            
+            <h4>Mínima</h4>
+
+            <p>{min}°C</p>
+
         </div>
     )
 }
