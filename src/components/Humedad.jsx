@@ -3,9 +3,9 @@ import { PieChart, Pie, Cell} from 'recharts';
 
 const Humedad = ({humedad}) => {
     
-    let max = Math.max(...humedad);     
+    let max = humedad;     
     let resto = 100 - max;
-    console.log(max)
+    
     const data = [
         { name: 'Group A', value: (max) },
         { name: 'Group B', value: (resto) },
@@ -15,7 +15,7 @@ const Humedad = ({humedad}) => {
     
         return (  
             <div className="humedad" >  
-            <h4>Humedad maxima</h4>  
+            <h4>Humedad</h4>  
             <PieChart className='barra' width={300} height={300} >
                 <Pie
                     data={data}

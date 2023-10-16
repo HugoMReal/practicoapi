@@ -54,7 +54,7 @@ function App() {
             horaAct={weatherData["current"]["time"]} />}
 
         {!loading && weatherData &&
-          <Humedad humedad={weatherData["hourly"]["relativehumidity_2m"]} />}
+          <Humedad humedad={weatherData["current"]["relativehumidity_2m"]}/>}
 
         {!loading && weatherData && <IndiceUV uv={weatherData["daily"]["uv_index_max"]} />}
 
@@ -67,7 +67,7 @@ function App() {
         {!loading && weatherData &&
           <MaxMin max={weatherData["daily"]["temperature_2m_max"]} min={weatherData["daily"]["temperature_2m_min"]} />}
 
-        {!loading && weatherData && <Visibilidad visibilidad={weatherData["hourly"]["visibility"]} />}
+        {!loading && weatherData && <Visibilidad visibilidad={weatherData["hourly"]["visibility"]} horaAct={weatherData["current"]["time"]}/>}
 
         {!loading && <CalidadAire calidad={calidad} />}
 

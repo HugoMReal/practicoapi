@@ -1,11 +1,14 @@
-function Visibilidad({visibilidad}) {
-let min = Math.min(...visibilidad)/1000;
+function Visibilidad({ visibilidad, horaAct }) {
 
-console.log(min);
+    let actual = horaAct;
+    let actualCortada = actual.split("T");
+    let posicion = actualCortada[1].split(":");
+
+    let min = visibilidad[posicion[0]] / 1000;
 
     return (
         <div className="visibilidad">
-            <h4>Visibilidad minima</h4>
+            <h4>Visibilidad</h4>
             <p>{min} km</p>
         </div>
     )
