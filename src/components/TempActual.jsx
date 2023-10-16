@@ -1,6 +1,7 @@
-function TempActual({tAhora, unidadTemp}) {
+function TempActual({ tAhora, unidadTemp }) {
+
     return (
-        <div className="temp">
+        <div>
             <h4>Temperatura actual </h4>
             <p>{tAhora} {unidadTemp}</p>
         </div>)

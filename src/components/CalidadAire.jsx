@@ -20,7 +20,7 @@ function CalidadAire() {
 
     return (
         <div className="calidad">
-            <h4>Calidad del aire minima</h4>
+            <h4>Calidad del aire</h4>
             {!loading && weatherAqi && <p>{weatherAqi["current"]["european_aqi"]}</p>}
         </div>
     )

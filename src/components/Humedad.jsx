@@ -16,13 +16,13 @@ const Humedad = ({humedad}) => {
         return (  
             <div className="humedad" >  
             <h4>Humedad</h4>  
-            <PieChart className='barra' width={300} height={300} >
+            <PieChart className='barra' width={100} height={100} >
                 <Pie
                     data={data}
                     cx="50%"
                     cy="50%"
-                    innerRadius={100}
-                    outerRadius={120}
+                    innerRadius={20}
+                    outerRadius={30}
                     fill="#8884d8"
                     paddingAngle={1}
                     dataKey="value"

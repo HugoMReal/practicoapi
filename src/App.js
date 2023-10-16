@@ -29,46 +29,54 @@ function App() {
 
   console.log(weatherData);
 
-   return (
+  return (
     <div className="App">
 
       <div className="weather-container">
 
-        {!loading && weatherData &&
-          <div className='titulo'>Hoy</div>}
-
-        {!loading && weatherData &&
-          <div className='resumen'>Resumen</div>}
-
-        <div>{loading && <h1>Cargando...</h1>}</div>
-
-        {!loading && weatherData &&
-          <TempActual tAhora={weatherData["current"]["temperature_2m"]}
+        <div className='ahora'>
+          {!loading && weatherData && <TempActual tAhora={weatherData["current"]["temperature_2m"]}
             unidadTemp={!loading && weatherData && weatherData["current_units"]["temperature_2m"]} />}
+        </div>
 
         {!loading && weatherData &&
-          <TempHora horas={weatherData["hourly"]["time"]} tempHoras={weatherData["hourly"]["temperature_2m"]}
-            horaAct={weatherData["current"]["time"]} />}
+          <div className='titulo'>Hoy
+            <div className='tempHora'>
+              {!loading && weatherData &&
+                <TempHora horas={weatherData["hourly"]["time"]} tempHoras={weatherData["hourly"]["temperature_2m"]}
+                  horaAct={weatherData["current"]["time"]} />}
+            </div>
+          </div>
+        }
 
-        {!loading && weatherData &&
-          <Humedad humedad={weatherData["current"]["relativehumidity_2m"]}/>}
+        <div className='sol'>
+          {!loading && weatherData &&
+            <AmanecerPuesta amanecer={weatherData["daily"]["sunrise"]} puesta={weatherData["daily"]["sunset"]} />}
+        </div>
 
-        {!loading && weatherData && <IndiceUV uv={weatherData["daily"]["uv_index_max"]} />}
+        {!loading && weatherData && <div className='resumen'>Resumen
+          <div className='tarjetas'>
+            <div className='tarjeta'>
+              {!loading && weatherData && <Humedad humedad={weatherData["current"]["relativehumidity_2m"]} />}</div>
+            <div className='tarjeta'>
+              {!loading && weatherData && <IndiceUV uv={weatherData["daily"]["uv_index_max"]} />}</div>
+            <div className='tarjeta'>{!loading && weatherData && <Viento vientoMax={weatherData["current"]["windspeed_10m"]}
+              unidadViento={weatherData["current_units"]["windspeed_10m"]} />};     </div>
+            <div className='tarjeta'>{!loading && weatherData &&
+              <MaxMin max={weatherData["daily"]["temperature_2m_max"]} min={weatherData["daily"]["temperature_2m_min"]} />}</div>
+            <div className='tarjeta'>{!loading && weatherData && <Visibilidad visibilidad={weatherData["hourly"]["visibility"]} horaAct={weatherData["current"]["time"]} />}</div>
+            <div className='tarjeta'>{!loading && <CalidadAire />} </div>
+          </div>
+        </div>}
+        <div>{loading && <h1>Cargando...</h1>}</div>        
+       
+      </div>
 
-        {!loading && weatherData && <Viento vientoMax={weatherData["current"]["windspeed_10m"]}
-          unidadViento={weatherData["current_units"]["windspeed_10m"]} />};
-
-        {!loading && weatherData &&
-          <AmanecerPuesta amanecer={weatherData["daily"]["sunrise"]} puesta={weatherData["daily"]["sunset"]} />}
-
-        {!loading && weatherData &&
-          <MaxMin max={weatherData["daily"]["temperature_2m_max"]} min={weatherData["daily"]["temperature_2m_min"]} />}
-
-        {!loading && weatherData && <Visibilidad visibilidad={weatherData["hourly"]["visibility"]} horaAct={weatherData["current"]["time"]}/>}
-
-        {!loading && <CalidadAire />}
+      <div className="bus-container">
 
       </div>
+
+
 
     </div>
   );

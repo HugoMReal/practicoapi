@@ -1,84 +1,77 @@
+* {
+  margin: 0;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  gap: 2px;
+  background-color: aquamarine;
+}
+
 .weather-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: 80px auto 80px auto auto;
-  gap: 20px;
-  background-color: #2196F3;
-  padding: 10px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: aquamarine;
+  gap: 10px;
+  padding: auto;
+  margin-top: 10px;
+  max-height: 95vh;
+  
 }
 
-.weather-container>div {
-  padding: 20px 0;
-  font-size: 30px;
-  border-radius: 20px;
-  min-height: 50vh;
-}
-
-.titulo,
-.resumen {
-  background-color: #2196F3;
-  grid-column-start: 2;
-  grid-column-end: 4;
-
-}
-
-.temp {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  grid-row-start: 1;
-  grid-row-end: 4;
+.bus-container {
+  background-color: chocolate;
   border: solid;
 }
 
-.tempDia {
-  background-color: rgba(243, 118, 15, 0.8);
-  text-align: center;
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  border: solid;
-}
-
-.humedad,
-.amanecer {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  border: solid;
+.ahora,
+.sol,
+.tarjeta {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  border: solid;
+  border-radius: 10%;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+
 }
 
-.indice,
-.visibilidad {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  grid-column-start: 3;
-  grid-column-end: 4;
+.resumen {
+  display: grid;
+  grid-template-rows: 0.25fr 2.75fr;
+  gap:2%;
+}
+
+.titulo {
+  display: grid;
+  grid-template-rows: 0.25fr 2.75fr;
+  gap:2%;
+}
+
+.sol {
   border: solid;
 }
 
-.viento,
-.calidad {
-  background-color: rgba(255, 255, 255, 0.8);
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   text-align: center;
-  grid-column-start: 4;
-  grid-column-end: 5;
-  border: solid;
+  align-items: center;
+  gap: 15px;
 }
 
-.maxmin {
-  background-color: rgba(243, 118, 15, 0.8);
-  text-align: center;
-  grid-row-start: 4;
-  grid-row-end: 6;
+.tempHora {
+  display: flex;
   border: solid;
-}
+  border-radius: 10%;
+  align-items: center;
+  margin: 0;
+  }
 
-table {
-  margin: 0 auto;
+.tarjeta {
+  height: 100%;
 }
