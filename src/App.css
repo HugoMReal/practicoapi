@@ -2,6 +2,12 @@
   margin: 0;
 }
 
+.leaflet-container {
+  width: 100wh; 
+  height: 100vh;
+}
+
+
 .App {
   display: grid;
   grid-template-columns: 1fr 1fr;

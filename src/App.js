@@ -10,6 +10,7 @@ import Visibilidad from './components/Visibilidad';
 import CalidadAire from './components/CalidadAire';
 import { useState } from 'react';
 import { useEffect } from "react";
+import Transporte from './components/Transporte';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -32,22 +33,22 @@ function App() {
   return (
     <div className="App">
 
-      <div className="weather-container">
+      <div className="weather-container">      
 
         <div className='ahora'>
           {!loading && weatherData && <TempActual tAhora={weatherData["current"]["temperature_2m"]}
             unidadTemp={!loading && weatherData && weatherData["current_units"]["temperature_2m"]} />}
         </div>
 
-        {!loading && weatherData &&
-          <div className='titulo'>Hoy
-            <div className='tempHora'>
-              {!loading && weatherData &&
-                <TempHora horas={weatherData["hourly"]["time"]} tempHoras={weatherData["hourly"]["temperature_2m"]}
-                  horaAct={weatherData["current"]["time"]} />}
-            </div>
+
+        <div className='titulo'>Hoy
+          <div className='tempHora'>
+            {!loading && weatherData &&
+              <TempHora horas={weatherData["hourly"]["time"]} tempHoras={weatherData["hourly"]["temperature_2m"]}
+                horaAct={weatherData["current"]["time"]} />}
           </div>
-        }
+        </div>
+
 
         <div className='sol'>
           {!loading && weatherData &&
@@ -68,11 +69,12 @@ function App() {
             <div className='tarjeta'>{!loading && <CalidadAire />} </div>
           </div>
         </div>}
-        <div>{loading && <h1>Cargando...</h1>}</div>        
-       
+        <div>{loading && <h1>Cargando...</h1>}</div>
+
       </div>
 
       <div className="bus-container">
+        <Transporte/>
 
       </div>
 
