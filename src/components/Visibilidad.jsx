@@ -4,11 +4,11 @@ function Visibilidad({ visibilidad, horaAct }) {
     let actualCortada = actual.split("T");
     let posicion = actualCortada[1].split(":");
 
-    let min = visibilidad[posicion[0]] / 1000;
+    let min = visibilidad[Number(posicion[0])] / 1000;
 
     return (
         <div className="visibilidad">
-            <h4>Visibilidad max</h4>
+            <h4>Visibilidad</h4>
             <p>{min} km</p>
         </div>
     )

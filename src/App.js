@@ -20,8 +20,7 @@ function App() {
       });
   }, [])
 
-  console.log(weatherData);
-
+  
   return (
 
     <div className="App">
