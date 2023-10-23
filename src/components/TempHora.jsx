@@ -21,18 +21,8 @@ const TempHora = ({ horas, tempHoras, horaAct }) => {
     Temperatura: temperaturasCortadas[i],
   }))
 
-  console.log(data);
+ 
     
-//coreegir error de horas!!, si falta menos para las doce salta error
-    // const data = [
-    //     { hora: (horarios[posicion].split("T")[1]), Temperatura: (temperatura[posicion]) },
-    //     { hora: (horarios[posicion + 1].split("T")[1]), Temperatura: (temperatura[posicion + 1]) },
-    //     { hora: (horarios[posicion + 2].split("T")[1]), Temperatura: (temperatura[posicion + 2]) },
-    //     { hora: (horarios[posicion + 3].split("T")[1]), Temperatura: (temperatura[posicion + 3]) },
-       // { hora: (horarios[posicion + 4].split("T")[1]), Temperatura: (temperatura[posicion + 4]) },
-       // { hora: (horarios[posicion + 5].split("T")[1]), Temperatura: (temperatura[posicion + 5]) },
-       // { hora: (horarios[posicion + 6].split("T")[1]), Temperatura: (temperatura[posicion + 6]) },
-    // ]
     return (
             <ResponsiveContainer width="100%" aspect={2}>
                 <BarChart data={data} width="100%" height="100%" barSize="2%" >
