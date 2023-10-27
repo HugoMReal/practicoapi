@@ -1,0 +1,42 @@
+[
+    {
+        "route_id": "1468",
+        "route_short_name": "153A"
+    },
+    {
+        "route_id": "1466",
+        "route_short_name": "321A"
+    },
+    {
+        "route_id": "1700",
+        "route_short_name": "159J"
+    },
+    {
+        "route_id": "1703",
+        "route_short_name": "159A"
+    },
+    {
+        "route_id": "830",
+        "route_short_name": "159B"
+    },
+    {
+        "route_id": "839",
+        "route_short_name": "159C"
+    },
+    {
+        "route_id": "1696",
+        "route_short_name": "159E"
+    },
+    {
+        "route_id": "1634",
+        "route_short_name": "148B"
+    },
+    {
+        "route_id": "316",
+        "route_short_name": "148D"
+    },
+    {
+        "route_id": "1703",
+        "route_short_name": "159A"
+    }
+]
