@@ -1,42 +1,52 @@
 [
     {
         "route_id": "1468",
-        "route_short_name": "153A"
+        "route_short_name": "153A",
+        "trip_headsign": "a B° Nuevo"
     },
     {
         "route_id": "1466",
-        "route_short_name": "321A"
+        "route_short_name": "321A",
+        "trip_headsign": "a LIBERTAD"
     },
     {
         "route_id": "1700",
-        "route_short_name": "159J"
+        "route_short_name": "159J",
+        "trip_headsign": "a Correo Central"
     },
     {
         "route_id": "1703",
-        "route_short_name": "159A"
+        "route_short_name": "159A",
+        "trip_headsign": "L (Azul) Correo Central"
     },
     {
         "route_id": "830",
-        "route_short_name": "159B"
+        "route_short_name": "159B",
+        "trip_headsign": "L (Roja) Alpargatas"
     },
     {
         "route_id": "839",
-        "route_short_name": "159C"
+        "route_short_name": "159C",
+        "trip_headsign": "L (Roja) Correo Central"
     },
     {
         "route_id": "1696",
-        "route_short_name": "159E"
+        "route_short_name": "159E",
+        "trip_headsign": "2 hacia C Central"
     },
     {
         "route_id": "1634",
-        "route_short_name": "148B"
+        "route_short_name": "148B",
+        "trip_headsign": "C - Capilla"
     },
     {
         "route_id": "316",
-        "route_short_name": "148D"
+        "route_short_name": "148D",
+        "trip_headsign": "a Constitución"
     },
     {
         "route_id": "1703",
-        "route_short_name": "159A"
+        "route_short_name": "159A",
+        "trip_headsign": "L (Azul) Correo Central"
     }
 ]

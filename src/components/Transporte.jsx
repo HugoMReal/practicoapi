@@ -24,56 +24,47 @@ function Transporte() {
             });
     }
     useEffect(() => {
-        Data(linea)
         const interval = setInterval(() => {
             Data(linea)
         }, 31000);
         return () => clearInterval(interval);
-    }, []);
+    }, [linea]);
+
 
     useEffect(() => {
-      setTimeout(() => {
         Data(linea)
-      },31000);   
-     
-    }, [])      
+    }, [linea]);
 
 
-useEffect(() => {
-    Data(linea)
-}, [linea]);
+    const transportes = transporteData;
 
+    const handlerCargarLineas = function (e) {
+        const opcion = e.target.value;
+        setLinea(opcion);
+    }
 
-const transportes = transporteData;
-
-const handlerCargarLineas = function (e) {
-    const opcion = e.target.value;
-    setLinea(opcion);
-}
-
-console.log ("mapa",transportes);
-
-return (
-    <div>
-        {loading1 && <h1>Cargando...</h1>}
-        <div className="linea">
-            <select onClick={handlerCargarLineas}>
-                <option value={-1} disabled>Seleccione una opción:</option>
-                {
-                    lineas.map((linea) => (
-                        <option value={linea.route_id}>{linea.route_short_name}</option>
-                    ))
-                }
-            </select>
-            <span>{linea}</span>
-        </div>
-
+    return (
         <div>
-            {!loading1 && transporteData && <Mapa transData={transportes} />}
-        </div>
-    </div>
+            {loading1 && <h1>Cargando...</h1>}
+            <div className="linea">
+                <span>Seleccione una línea de colectivo:</span><br></br>
+                <select onClick={handlerCargarLineas}>
+                    <option value={-1} disabled hidden></option>
+                    {
+                        lineas.map((linea) => (
+                            <option value={linea.route_id}>{linea.route_short_name} {linea.trip_headsign}</option>
+                        ))
+                    }
 
-)
+                </select>
+            </div>
+
+            <div>
+                {!loading1 && transporteData && <Mapa transData={transportes} />}
+            </div>
+        </div>
+
+    )
 }
 
 export default Transporte;
