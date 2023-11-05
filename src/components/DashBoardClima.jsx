@@ -7,11 +7,15 @@ import AmanecerPuesta from './AmanecerPuesta';
 import MaxMin from './MaxMin';
 import Visibilidad from './Visibilidad';
 import CalidadAire from './CalidadAire';
+import Ciudad from './Ciudad';
+import { useState } from 'react';
 
 
 function DashBoardClima({ weatherData }) {
+    const [ciudadSeleccionada, setCiudadSeleccionada] = useState(null);
     return (
         <>
+        <Ciudad ciudadSeleccionada={ciudadSeleccionada} setCiudadSeleccionada={setCiudadSeleccionada}/>
             <div className='ahora'>
                 <TempActual tAhora={weatherData["current"]["temperature_2m"]}
                     unidadTemp={weatherData["current_units"]["temperature_2m"]} />

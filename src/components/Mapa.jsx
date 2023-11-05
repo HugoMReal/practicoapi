@@ -12,6 +12,7 @@ function Mapa({ transData }) {
     const quitarLetras = (cadena) => {
         return (cadena.replace(/[^0-9]/g, ''));
     };
+    
     const numLinea = quitarLetras(transportes[0]["route_short_name"]);
     const url = `https://www.xcolectivo.com.ar/imagenes/colectivos/identificador/linea${numLinea}.jpg`
 
@@ -22,6 +23,7 @@ function Mapa({ transData }) {
             popupAnchor: [0, -32],
         })
     
+        console.log ()
 
     return (
         <div>

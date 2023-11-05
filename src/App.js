@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from "react";
 import Transporte from './components/Transporte';
 import DashBoardClima from './components/DashBoardClima';
+
 //import datos from './api/api.json';
 
 
@@ -29,9 +30,9 @@ function App() {
         {!loading && weatherData && <DashBoardClima weatherData={weatherData} />}
         {loading && <h1>Cargando...</h1>}
       </div>
-      <div className="bus-container">
+      {/* <div className="bus-container">
         <Transporte  />
-      </div>
+      </div>  */}
     </div>
   );
 }

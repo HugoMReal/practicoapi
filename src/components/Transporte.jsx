@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from "react";
-import Menu from './Menu';
+//import Menu from './Menu'; no llegue a hacer el modulo separado - va para la proxima si llego
 import Mapa from './Mapa';
 import listado from './listadoLineas.json';
 
@@ -38,16 +38,21 @@ function Transporte() {
 
     const transportes = transporteData;
 
+    console.log(linea);
+
+   
     const handlerCargarLineas = function (e) {
         const opcion = e.target.value;
         setLinea(opcion);
     }
 
     return (
-        <div>
+        <div className='transporte'>
             {loading1 && <h1>Cargando...</h1>}
-            <div className="linea">
-                <span>Seleccione una línea de colectivo:</span><br></br>
+
+            <h4>Seleccione una línea de colectivo:</h4>
+
+            <div className="linea">                
                 <select onClick={handlerCargarLineas}>
                     <option value={-1} disabled hidden></option>
                     {
@@ -60,7 +65,7 @@ function Transporte() {
             </div>
 
             <div>
-                {!loading1 && transporteData && <Mapa transData={transportes} />}
+                {!loading1 && transporteData.lenght!=0 && <Mapa transData={transportes} />}
             </div>
         </div>
 
