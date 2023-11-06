@@ -1,22 +1,27 @@
 import { useState } from 'react';
 import { useEffect } from "react";
 
-function CalidadAire() {
+function CalidadAire({ ciudadSeleccionada }) {
 
     const [weatherAqi, setWeatherAqi] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    console.log("esto es CalidadAire",ciudadSeleccionada);
 
+    useEffect(() => {
         fetch(
-            'https://air-quality-api.open-meteo.com/v1/air-quality?latitude=-36.8927&longitude=-60.3225&current=european_aqi&timezone=America%2FSao_Paulo&forecast_days=1')
-            .then(resp => resp.json()).then((aqi) => {
+            `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${ciudadSeleccionada.latitude}&longitude=${ciudadSeleccionada.longitude}&current=european_aqi&timezone=America%2FSao_Paulo&forecast_days=1`
+        )
+            .then((resp) => resp.json())
+            .then((aqi) => {
                 setWeatherAqi(aqi);
                 setLoading(false);
-            }).catch((ex) => {
+            })
+            .catch((ex) => {
                 console.error(ex);
             });
-    }, [])
+    }
+        , [ciudadSeleccionada])
 
     return (
         <div className="calidad">

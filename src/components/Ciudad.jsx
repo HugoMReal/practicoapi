@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-const Ciudad = () => {
+
+    const Ciudad = ({ciudadSeleccionada, setCiudadSeleccionada}) => {
 
     const [ciudad, setCiudad] = useState('');
     const [opciones, setOpciones] = useState([]);
-    const [ciudadSeleccionada, setCiudadSeleccionada] = useState(null);
+    
 
     const API_URL = 'https://geocoding-api.open-meteo.com/v1/search';
 

@@ -8,11 +8,13 @@ import MaxMin from './MaxMin';
 import Visibilidad from './Visibilidad';
 import CalidadAire from './CalidadAire';
 import Ciudad from './Ciudad';
-import { useState } from 'react';
 
 
-function DashBoardClima({ weatherData }) {
-    const [ciudadSeleccionada, setCiudadSeleccionada] = useState(null);
+// function DashBoardClima({ weatherData }) {
+//     const [ciudadSeleccionada, setCiudadSeleccionada] = useState(null);
+function DashBoardClima({ weatherData, ciudadSeleccionada ,setCiudadSeleccionada }) {
+
+    console.log(ciudadSeleccionada);
     return (
         <>
         <Ciudad ciudadSeleccionada={ciudadSeleccionada} setCiudadSeleccionada={setCiudadSeleccionada}/>
@@ -55,7 +57,7 @@ function DashBoardClima({ weatherData }) {
                             horaAct={weatherData["current"]["time"]} /></div>
 
                     <div className='tarjeta'>
-                        <CalidadAire /> </div>
+                        <CalidadAire ciudadSeleccionada = {ciudadSeleccionada} /> </div>
 
                 </div>
             </div>
