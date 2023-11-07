@@ -6,8 +6,6 @@ function CalidadAire({ ciudadSeleccionada }) {
     const [weatherAqi, setWeatherAqi] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    console.log("esto es CalidadAire",ciudadSeleccionada);
-
     useEffect(() => {
         fetch(
             `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${ciudadSeleccionada.latitude}&longitude=${ciudadSeleccionada.longitude}&current=european_aqi&timezone=America%2FSao_Paulo&forecast_days=1`

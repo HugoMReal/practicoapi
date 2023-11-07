@@ -1,7 +1,7 @@
 import React from 'react';
 import { Bar, BarChart, ResponsiveContainer, ReferenceLine, Tooltip, XAxis, YAxis, Legend } from 'recharts';
 
-const TempHora = ({ horas, tempHoras, horaAct }) => {
+const TempHora = ({ horas, tempHoras, horaAct}) => {
 
     const horarios = horas;
     const temperatura = tempHoras;

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 
-    const Ciudad = ({ciudadSeleccionada, setCiudadSeleccionada}) => {
+const Ciudad = ({ ciudadSeleccionada, setCiudadSeleccionada }) => {
 
     const [ciudad, setCiudad] = useState('');
     const [opciones, setOpciones] = useState([]);
-    
+
 
     const API_URL = 'https://geocoding-api.open-meteo.com/v1/search';
 
@@ -20,12 +20,12 @@ import { useState } from 'react';
             .catch((error) => console.error(error));
     };
 
-    const handleCitySelect = (opcionSeleccionada) => {
-        const seleccion = opcionSeleccionada ? opcionSeleccionada.value : null;
-        const ciudad = opciones.find((ciudad) => ciudad.value === seleccion);
+  
+    const handleCitySelect = (seleccion) => {
+        const ciudad = opciones.find((ciudad) => ciudad === seleccion);
         setCiudadSeleccionada(ciudad);
-        setCiudad(null);
-        setOpciones(null);
+        setCiudad('');
+        setOpciones([]);
     };
 
     return (
@@ -47,9 +47,7 @@ import { useState } from 'react';
 
             {ciudadSeleccionada && (
                 <div>
-                    <h2>{ciudadSeleccionada.name}</h2>
-                    <p>Latitud: {ciudadSeleccionada.latitude}</p>
-                    <p>Longitud: {ciudadSeleccionada.longitude}</p>
+                    <h2>{ciudadSeleccionada.name}, {ciudadSeleccionada.admin1}, {ciudadSeleccionada.country} </h2>
                 </div>
             )}
         </div>
@@ -58,6 +56,8 @@ import { useState } from 'react';
 
 
 export default Ciudad;
+
+
 
 
 

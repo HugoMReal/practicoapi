@@ -14,7 +14,6 @@ import Ciudad from './Ciudad';
 //     const [ciudadSeleccionada, setCiudadSeleccionada] = useState(null);
 function DashBoardClima({ weatherData, ciudadSeleccionada ,setCiudadSeleccionada }) {
 
-    console.log(ciudadSeleccionada);
     return (
         <>
         <Ciudad ciudadSeleccionada={ciudadSeleccionada} setCiudadSeleccionada={setCiudadSeleccionada}/>
@@ -27,7 +26,8 @@ function DashBoardClima({ weatherData, ciudadSeleccionada ,setCiudadSeleccionada
                 <div className='tempHora'>
                     <TempHora horas={weatherData["hourly"]["time"]}
                         tempHoras={weatherData["hourly"]["temperature_2m"]}
-                        horaAct={weatherData["current"]["time"]} />
+                        horaAct={weatherData["current"]["time"]} 
+                        weatherData = {weatherData}/>
                 </div>
             </div>
 
