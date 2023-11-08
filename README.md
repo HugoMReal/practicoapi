@@ -13,11 +13,11 @@ Tener un navegador y conexión a internet.
 
 ## Mejoras ⚙️
 
--[x] Buscador de ciudades mediante la API de geolocalización.
--[x] Utilizar las coordenas obtenidas de la API de geo para traer los datos del clima de esa ciudad.
--[x] Escribir este MD.
--[ ] Buscador de lineas de colectivo por destino.
--[ ] Un diseño de página atractivo, por ahora es funcional.
+- [x] Buscador de ciudades mediante la API de geolocalización.
+- [x] Utilizar las coordenas obtenidas de la API de geo para traer los datos del clima de esa ciudad.
+- [x] Escribir este MD.
+- [ ] Buscador de lineas de colectivo por destino.
+- [ ] Un diseño de página atractivo, por ahora es funcional.
 
 ## Construido con 🛠️
 
