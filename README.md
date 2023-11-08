@@ -27,7 +27,7 @@ Tener un navegador y conexión a internet.
 
 * [API de Clima.](https://open-meteo.com/en/docs)
 
-* [API de Transporte de la ciudad de Buenos Aires.](https://datosabiertos-transporte-apis.buenosaires.gob.ar)
+* [API de Transporte de la ciudad de Buenos Aires.](https://apitransporte.buenosaires.gob.ar/colectivos/vehiclePositionsSimple?client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6)
 
 * [La mayoria de React.](https://es.react.dev/learn)
 
