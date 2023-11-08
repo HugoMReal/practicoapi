@@ -10,13 +10,13 @@ import CalidadAire from './CalidadAire';
 import Ciudad from './Ciudad';
 
 
-// function DashBoardClima({ weatherData }) {
-//     const [ciudadSeleccionada, setCiudadSeleccionada] = useState(null);
 function DashBoardClima({ weatherData, ciudadSeleccionada ,setCiudadSeleccionada }) {
 
     return (
         <>
-        <Ciudad ciudadSeleccionada={ciudadSeleccionada} setCiudadSeleccionada={setCiudadSeleccionada}/>
+        <div className='ciudad'>
+        <Ciudad  ciudadSeleccionada={ciudadSeleccionada} setCiudadSeleccionada={setCiudadSeleccionada}/>
+        </div>
             <div className='ahora'>
                 <TempActual tAhora={weatherData["current"]["temperature_2m"]}
                     unidadTemp={weatherData["current_units"]["temperature_2m"]} />
@@ -27,7 +27,7 @@ function DashBoardClima({ weatherData, ciudadSeleccionada ,setCiudadSeleccionada
                     <TempHora horas={weatherData["hourly"]["time"]}
                         tempHoras={weatherData["hourly"]["temperature_2m"]}
                         horaAct={weatherData["current"]["time"]} 
-                        weatherData = {weatherData}/>
+                        />
                 </div>
             </div>
 

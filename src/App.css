@@ -3,8 +3,10 @@
 }
 
 .leaflet-container {
-  width: 100wh; 
-  height: 100vh;
+  width: 100%; 
+  height: 90vh;
+  border-radius: 10%;
+  border: solid;
 }
 
 
@@ -14,6 +16,7 @@
   height: 100vh;
   gap: 2px;
   background-color: aquamarine;
+  padding: auto;
 }
 
 .weather-container {
@@ -21,16 +24,20 @@
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   background-color: aquamarine;
-  gap: 10px;
-  padding: auto;
-  margin-top: 10px;
-  max-height: 95vh;
+  gap: 1%;
+  padding: 1%;
+  margin-top: 1%;
+  max-height: 100vh;
+
   
 }
 
 .bus-container {
   background-color: chocolate;
-  border: solid;
+  gap: 1%;
+  padding: 1%;
+  max-height: 100vh;
+
 }
 
 .ahora,
@@ -67,7 +74,7 @@
   grid-template-rows: repeat(2, 1fr);
   text-align: center;
   align-items: center;
-  gap: 15px;
+  gap: 4%;
 }
 
 .tempHora {
@@ -80,4 +87,13 @@
 
 .tarjeta {
   height: 100%;
+}
+
+.ciudad {
+  grid-column: 1 / -1; /* Se extiende desde la primera columna hasta la última columna de la cuadrícula */
+  grid-row: 1; /* Se encuentra en la primera fila */
+}
+
+.opciones:hover {
+  cursor: pointer;
 }

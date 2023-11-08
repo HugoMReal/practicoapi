@@ -20,7 +20,7 @@ const Ciudad = ({ ciudadSeleccionada, setCiudadSeleccionada }) => {
             .catch((error) => console.error(error));
     };
 
-  
+
     const handleCitySelect = (seleccion) => {
         const ciudad = opciones.find((ciudad) => ciudad === seleccion);
         setCiudadSeleccionada(ciudad);
@@ -30,6 +30,12 @@ const Ciudad = ({ ciudadSeleccionada, setCiudadSeleccionada }) => {
 
     return (
         <div>
+            {ciudadSeleccionada && (
+                <div>
+                    <h2>Datos del clima en: {ciudadSeleccionada.name}, {ciudadSeleccionada.admin1}, {ciudadSeleccionada.country} </h2>
+                </div>
+            )}
+
             <input
                 type="text"
                 placeholder="Escribe una ciudad"
@@ -37,7 +43,7 @@ const Ciudad = ({ ciudadSeleccionada, setCiudadSeleccionada }) => {
                 onChange={handleInputChange}
             />
 
-            <ul>
+            <ul className='opciones'>
                 {opciones && opciones.map((ciudad) => (
                     <li key={ciudad.id} onClick={() => handleCitySelect(ciudad)}>
                         {ciudad.name}, {ciudad.admin1}, {ciudad.country}
@@ -45,11 +51,9 @@ const Ciudad = ({ ciudadSeleccionada, setCiudadSeleccionada }) => {
                 ))}
             </ul>
 
-            {ciudadSeleccionada && (
-                <div>
-                    <h2>{ciudadSeleccionada.name}, {ciudadSeleccionada.admin1}, {ciudadSeleccionada.country} </h2>
-                </div>
-            )}
+
+
+
         </div>
     );
 };
